@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wassup chat app</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <section class="chat__section">
+        <div class="brand">
+            <img height="40" src="/wassup.png" alt="">
+            <h1>Wassup  </h1>
+           <br>
+<p id="active-users" class="dark-theme">Active Users: 1 <br></p>
+
+            <button id="theme-toggle">Theme</button>
+        </div>
+        <div class="message__area"></div>
+        <div>
+            <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..."></textarea>
+        </div>
+       
+    </section>
+    <!-- <audio id="joinSound">
+        <source src="/pop.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio> -->
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+</body>
+
+</html>

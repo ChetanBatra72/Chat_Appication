@@ -1,0 +1,139 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #F8F8F8;
+    font-family: 'Roboto', sans-serif;
+}
+section.chat__section {
+    width: 800px;
+    max-width: 90%;
+    background: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.brand {
+    padding: 20px;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+}
+.brand h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #444;
+    margin-left: 10px;
+}
+.message__area{
+    height: 500px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 40px;
+}
+textarea {
+    width: 100%;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    outline: none;
+    background: #FBFBFB;
+    /* overflow: hidden; */
+}
+
+.message {
+    padding: 20px; 
+    border-radius: 4px; 
+    margin-bottom: 40px;
+    max-width: 300px;
+    position: relative;
+    /* overflow: hidden; */
+}
+.incoming {
+    background: #8F8BE8;
+    color: #fff;  
+    height: auto;
+    /* overflow: hidden; */
+}
+.outgoing {
+    background: #e9eafd;
+    color: #787986;
+    margin-left: auto;
+    /* height: auto;
+    overflow: hidden; */
+}
+.message h4 {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: #e9b421;
+    font-size: 14px;
+}
+/* Add this CSS at the end of your existing CSS file */
+body.dark-theme {
+    background-color: #222;
+    color: #fff;
+}
+
+.brand button {
+    margin-left: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+/* Your existing CSS code... */
+
+/* Add this to the end of your CSS file */
+body.dark-theme {
+    background-color: #222;
+    color: #fff;
+}
+
+.message__area.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.brand.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+#active-users{
+   color: #8F8BE8; 
+}
+/* Add this to your existing CSS */
+.timestamp {
+    font-size: 12px;
+    color: #888;
+    margin-left: 10px;
+}
+.typing-indicator {
+    font-size: 12px;
+    color: #888;
+    margin-left: 10px;
+    margin-top: -16px;
+}
+
+
+/* End of the added CSS */
+.delete-button {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
