@@ -10,7 +10,8 @@ let isDarkTheme = false;
 do {
   name = prompt("Please enter your name: ");
   const para = document.createElement("p");
-  para.innerText = name;
+  let uName =  " 👤 " + name;
+  para.innerText = uName;
   // currUser.appendChild(para);
   currUser.insertBefore(para, currUser.children[0]);
   console.log(para);
