@@ -1,139 +1,183 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #F8F8F8;
-    font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f8f8f8;
+  font-family: "Roboto", sans-serif;
 }
+
 section.chat__section {
-    width: 800px;
-    max-width: 90%;
-    background: #fff;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* width: 800px; */
+  width: 90%;
+  /* max-width: 100%; */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+
 .brand {
-    padding: 20px;
-    background: #f1f1f1;
-    display: flex;
-    align-items: center;
+  padding: 20px;
+  background: #f1f1f1;
+  display: flex;
+  /* align-items: ; */
+  justify-content: space-between;
 }
+
+.banner {
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+}
+
 .brand h1 {
-    text-transform: uppercase;
-    font-size: 20px;
-    color: #444;
-    margin-left: 10px;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #444;
+  margin-left: 10px;
 }
-.message__area{
-    height: 500px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding-top: 40px;
+.message__area {
+  /* background-color: #333; */
+  flex-grow: 1;
+ 
+  height: 500px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding-top: 40px;
+  background-image: url("crick.png");
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 textarea {
-    width: 100%;
-    border: none;
-    padding: 20px;
-    font-size: 16px;
-    outline: none;
-    background: #FBFBFB;
-    /* overflow: hidden; */
+  width: 100%;
+  border: none;
+  padding: 20px;
+  font-size: 16px;
+  outline: none;
+  background: #fbfbfb;
 }
 
 .message {
-    padding: 20px; 
-    border-radius: 4px; 
-    margin-bottom: 40px;
-    max-width: 300px;
-    position: relative;
-    /* overflow: hidden; */
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  max-width: 300px;
+  position: relative;
+  /* overflow: hidden; */
 }
 .incoming {
-    background: #8F8BE8;
-    color: #fff;  
-    height: auto;
-    /* overflow: hidden; */
+  background: #8f8be8;
+  color: #fff;
+  height: auto;
+  /* overflow: hidden; */
 }
 .outgoing {
-    background: #e9eafd;
-    color: #787986;
-    margin-left: auto;
-    /* height: auto;
+  /* background: #e9eafd; */
+  color: white;
+  background-color: #bcbcbc;
+  margin-left: auto;
+  /* height: auto;
     overflow: hidden; */
 }
 .message h4 {
-    position: absolute;
-    top: -20px;
-    left: 0;
-    color: #e9b421;
-    font-size: 14px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: #e9b421;
+  font-size: 14px;
 }
 /* Add this CSS at the end of your existing CSS file */
 body.dark-theme {
-    background-color: #222;
-    color: #fff;
+  background-color: #222;
+  color: #fff;
 }
 
 .brand button {
-    margin-left: 10px;
-    background-color: #444;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
+  /* background-color: #444; */
+  color: white;
+  background-color: #333;
+  border: none;
+  padding: 16px 16px;
+  cursor: pointer;
+  border-radius: 100%;
 }
+
+i {
+  font-size: 29px;
+}
+
 /* Your existing CSS code... */
 
 /* Add this to the end of your CSS file */
 body.dark-theme {
-    background-color: #222;
-    color: #fff;
+  background-color: #222;
+  color: #fff;
 }
 
 .message__area.dark-theme {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }
 
 .brand.dark-theme {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }
 
-#active-users{
-   color: #8F8BE8; 
+#active-users {
+  color: #8f8be8;
 }
 /* Add this to your existing CSS */
 .timestamp {
-    font-size: 12px;
-    color: #888;
-    margin-left: 10px;
+  font-size: 12px;
+  color: #888;
+  margin-left: 10px;
 }
 .typing-indicator {
-    font-size: 12px;
-    color: #888;
-    margin-left: 10px;
-    margin-top: -16px;
+  font-size: 12px;
+  color: #888;
+  margin-left: 10px;
+  margin-top: -16px;
 }
-
 
 /* End of the added CSS */
 .delete-button {
-    background-color: #ff5252;
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
+  color: white;
+  border: none;
+  color: #222;
+  font-size: 18px;
+  padding: 4px 4px;
+  border-radius: 100px;
+  background-color: #444;
+  /* font-size: 12px; */
+  cursor: pointer;
+}
+
+.active-theme {
+  /* background-color: #222; */
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+
+/* Adjust the font size and colors as needed for your design */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
 }

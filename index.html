@@ -1,36 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wassup chat app</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
-<body>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <body>
     <section class="chat__section">
-        <div class="brand">
-            <img height="40" src="/wassup.png" alt="">
-            <h1>Wassup  </h1>
-           <br>
-<p id="active-users" class="dark-theme">Active Users: 1 <br></p>
-
-            <button id="theme-toggle">Theme</button>
+      <div class="brand">
+        <div class="banner">
+          <img height="80" c src="/rand2.png" alt="" />
+          <h1>CrickSip</h1>
         </div>
-        <div class="message__area"></div>
-        <div>
-            <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..."></textarea>
+        <div class="active-theme">
+          <p id="active-users" class="dark-theme">Active Users: 1 <br /></p>
+          <button id="theme-toggle">
+            <i class="gg-moon"></i>
+          </button>
         </div>
-       
+      </div>
+      <div class="message__area"></div>
+      <div>
+        <textarea
+          id="textarea"
+          cols="30"
+          rows="1"
+          placeholder="Write a message..."
+        ></textarea>
+        <div class="footer">
+          <p class="footer-text">Built by: Chetan Batra</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/chetan-batra-17b8731b7/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/ChetanBatra72" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        
     </section>
     <!-- <audio id="joinSound">
         <source src="/pop.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio> -->
-    
+    <script
+      src="https://kit.fontawesome.com/a53433829a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/sun.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/moon.css"
+      rel="stylesheet"
+    />
     <script src="/socket.io/socket.io.js"></script>
     <script src="/client.js"></script>
-</body>
-
+  </body>
+ 
 </html>
