@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wassup chat app</title>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css">
   </head>
 
   <link
@@ -78,6 +79,26 @@
     />
     <script src="/socket.io/socket.io.js"></script>
     <script src="/client.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+    
+    <script>
+      $(document).ready(function () {
+        // Initialize the Emoji Picker
+        $("#textarea").emojioneArea({
+          pickerPosition: "top",
+          events: {
+            keydown: function (editor, event) {
+              if (event.which === 13 && !event.shiftKey) {
+                event.preventDefault(); // Prevent the default "Enter" key behavior (line break)
+                sendMessage(editor.html()); // Send the message
+                editor.html(""); // Clear the editor content
+              }
+            },
+          },
+        });
+      });
+    </script>
   </body>
  
 </html>

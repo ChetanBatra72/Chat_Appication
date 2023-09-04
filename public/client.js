@@ -6,7 +6,19 @@ let activeUsersElement = document.querySelector("#active-users");
 let themeToggle = document.querySelector("#theme-toggle");
 let currUser = document.querySelector(".active-theme");
 let isDarkTheme = false;
+let userElement = document.createElement("h4");
 
+const darkColors = [
+  "#222",
+  "#333",
+  "#444",
+  "#555",
+  "#666",
+  "#777",
+  "#888",
+  "#999",
+  "#aaa",
+];
 do {
   name = prompt("Please enter your name: ");
   const para = document.createElement("p");
@@ -16,13 +28,13 @@ do {
   currUser.insertBefore(para, currUser.children[0]);
   console.log(para);
 } while (!name);
-
+// Use the "keydown" event instead of "keyup"
 textarea.addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
     sendMessage(e.target.value);
+    e.preventDefault(); // Prevent the default behavior of the Enter key, which is to submit the form
   }
 });
-
 // Notify the server when the user joins
 socket.emit("userJoined", { userName: name });
 
@@ -66,6 +78,9 @@ function appendMessage(msg, type) {
     `;
   mainDiv.innerHTML = markup;
   messageArea.appendChild(mainDiv);
+ // Generate a random dark color
+ const randomColor = darkColors[Math.floor(Math.random() * darkColors.length)];
+ userElement.style.color = 'randomColor';
 }
 
 document.addEventListener("click", (event) => {
@@ -152,6 +167,9 @@ function toggleTheme() {
   document.body.classList.toggle("dark-theme", isDarkTheme);
   messageArea.classList.toggle("dark-theme", isDarkTheme);
   activeUsersElement.classList.toggle("dark-theme", isDarkTheme);
+  if (!isDarkTheme) {
+    message.userElement.style.color = "#e9b421";
+  }
 }
 
 function scrollToBottom() {
