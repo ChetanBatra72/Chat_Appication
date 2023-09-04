@@ -7,18 +7,21 @@ let themeToggle = document.querySelector("#theme-toggle");
 let currUser = document.querySelector(".active-theme");
 let isDarkTheme = false;
 let userElement = document.createElement("h4");
+const filteredWords = ["bitch", "fuck", "sex"];
+let userColors = {}; // Keep track of assigned colors for users
 
 const darkColors = [
-  "#222",
-  "#333",
-  "#444",
-  "#555",
-  "#666",
-  "#777",
-  "#888",
-  "#999",
-  "#aaa",
+  "#e9b421", // Dark Yellow
+  "#4caf50", // Dark Green
+  "#f44336", // Dark Red
+  "#2196f3", // Dark Blue
+  // Add more dark colors as needed
 ];
+function getRandomDarkColor() {
+  const darkColors = ['#222', '#333', '#444', '#555', '#666', '#777', '#888', '#999', '#aaa'];
+  return darkColors[Math.floor(Math.random() * darkColors.length)];
+}
+
 do {
   name = prompt("Please enter your name: ");
   const para = document.createElement("p");
@@ -29,10 +32,10 @@ do {
   console.log(para);
 } while (!name);
 // Use the "keydown" event instead of "keyup"
-textarea.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
-    sendMessage(e.target.value);
-    e.preventDefault(); // Prevent the default behavior of the Enter key, which is to submit the form
+textarea.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault(); // Prevent the default Enter key behavior (new line)
+    sendMessage(textarea.value);
   }
 });
 // Notify the server when the user joins
@@ -44,6 +47,11 @@ function formatTimestamp(date) {
 }
 
 function sendMessage(message) {
+  // Filter and replace bad words
+  filteredWords.forEach((word) => {
+    const regex = new RegExp(word, "gi"); // "gi" for global and case-insensitive match
+    message = message.replace(regex, "****");
+  });
   let msg = {
     user: name,
     message: message.trim(),
@@ -65,11 +73,16 @@ function appendMessage(msg, type) {
   mainDiv.dataset.messageId = msg.id; // Add the message id as a dataset attribute
   mainDiv.dataset.messageUser = msg.user; // Add the message user as a dataset attribute
 
+  const randomColo = getRandomDarkColor();
+  let userElement = document.createElement("h4");
+  userElement.style.color = randomColo;
+  userElement.textContent = msg.user;
+
   let deleteButton = "";
   if (msg.user === name) {
     deleteButton = `<button class="delete-button" data-message-id="${msg.id}" data-message-user="${msg.user}">🗑️</i></button>`;
   }
-
+  
   let markup = `
         <h4>${msg.user}</h4>
         <p>${msg.message}</p>
