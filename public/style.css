@@ -41,15 +41,17 @@ section.chat__section {
 }
 
 .brand h1 {
-  text-transform: uppercase;
-  font-size: 20px;
-  color: #444;
-  margin-left: 10px;
+  font-size: 28px; /* Increase the font size for emphasis */
+  color: #0077B5; /* A LinkedIn-like blue color for a professional look */
+  margin-left: 20px;
+  font-family: 'Roboto', sans-serif; /* Use the Roboto font for a modern and clean look */
+  font-weight: bold; /* Make the text bold for added emphasis */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
 }
 .message__area {
   /* background-color: #333; */
   flex-grow: 1;
- 
+
   height: 500px;
   padding: 16px;
   display: flex;
@@ -59,9 +61,6 @@ section.chat__section {
   background-image: url("crick.png");
   background-position: center;
   background-repeat: no-repeat;
- 
-  
-
 }
 
 textarea {
@@ -78,8 +77,10 @@ textarea {
   border-radius: 4px;
   margin-bottom: 40px;
   max-width: 300px;
+  height: auto;
   position: relative;
   /* overflow: hidden; */
+  white-space: initial;
 }
 .incoming {
   background: #8f8be8;
@@ -101,8 +102,15 @@ textarea {
   left: 0;
   color: #e9b421;
   font-size: 14px;
+  /* max-width: 64px;
+  word-wrap: break-word; */
 }
-/* Add this CSS at the end of your existing CSS file */
+
+.message p {
+  /* color: #222; */
+  word-wrap: break-word;
+}
+
 body.dark-theme {
   background-color: #222;
   color: #fff;
@@ -122,9 +130,6 @@ i {
   font-size: 29px;
 }
 
-/* Your existing CSS code... */
-
-/* Add this to the end of your CSS file */
 body.dark-theme {
   background-color: #222;
   color: #fff;
@@ -143,7 +148,6 @@ body.dark-theme {
 #active-users {
   color: #8f8be8;
 }
-/* Add this to your existing CSS */
 .timestamp {
   font-size: 12px;
   color: #888;
@@ -156,7 +160,6 @@ body.dark-theme {
   margin-top: -16px;
 }
 
-/* End of the added CSS */
 .delete-button {
   color: white;
   border: none;
@@ -174,17 +177,18 @@ body.dark-theme {
   display: flex;
   gap: 20px;
   align-items: center;
+  font-weight: bold;
+  color: darkblue;
 }
 
 
-/* Adjust the font size and colors as needed for your design */
 .footer {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  
 }
 .social-icons a + a {
-  margin-left: 10px; /* Adjust the margin as needed */
+  color: back;
+  margin-left: 10px; 
 }

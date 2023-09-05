@@ -27,6 +27,10 @@ CrickSip is a real-time chat application built for seamless communication. It pr
 4. Use emojis to add fun to your conversations.
 5. Enjoy the word filtering feature for a respectful chat experience.
 
+## Screenshots
+
+![Gameplay Screenshot 1](/public/Screenshot.PNG)
+
 ## Author 🧑‍💻
 
 - Chetan Batra

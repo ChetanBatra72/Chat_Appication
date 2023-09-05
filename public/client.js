@@ -7,29 +7,19 @@ let themeToggle = document.querySelector("#theme-toggle");
 let currUser = document.querySelector(".active-theme");
 let isDarkTheme = false;
 let userElement = document.createElement("h4");
-const filteredWords = ["bitch", "fuck", "sex"];
-let userColors = {}; // Keep track of assigned colors for users
+const filteredWords = ["dumb"];
 
-const darkColors = [
-  "#e9b421", // Dark Yellow
-  "#4caf50", // Dark Green
-  "#f44336", // Dark Red
-  "#2196f3", // Dark Blue
-  // Add more dark colors as needed
-];
-function getRandomDarkColor() {
-  const darkColors = ['#222', '#333', '#444', '#555', '#666', '#777', '#888', '#999', '#aaa'];
-  return darkColors[Math.floor(Math.random() * darkColors.length)];
-}
 
 do {
   name = prompt("Please enter your name: ");
   const para = document.createElement("p");
-  let uName =  " 👤 " + name;
-  para.innerText = uName;
-  // currUser.appendChild(para);
-  currUser.insertBefore(para, currUser.children[0]);
-  console.log(para);
+  if (name) {
+    let uName = " 👤 " + name;
+    para.innerText = uName;
+    // currUser.appendChild(para);
+    currUser.insertBefore(para, currUser.children[0]);
+    // console.log(para);
+  }
 } while (!name);
 // Use the "keydown" event instead of "keyup"
 textarea.addEventListener("keydown", (e) => {
@@ -69,20 +59,26 @@ function sendMessage(message) {
 function appendMessage(msg, type) {
   let mainDiv = document.createElement("div");
   let className = type;
+
   mainDiv.classList.add(className, "message");
   mainDiv.dataset.messageId = msg.id; // Add the message id as a dataset attribute
   mainDiv.dataset.messageUser = msg.user; // Add the message user as a dataset attribute
 
   const randomColo = getRandomDarkColor();
   let userElement = document.createElement("h4");
-  userElement.style.color = randomColo;
+  const myName = document.querySelector(`[data-message-user="${name}"]`);
+
+  console.log(myName);
+  console.log(userElement);
+
+  console.log("we are here", "in color");
   userElement.textContent = msg.user;
 
   let deleteButton = "";
   if (msg.user === name) {
     deleteButton = `<button class="delete-button" data-message-id="${msg.id}" data-message-user="${msg.user}">🗑️</i></button>`;
   }
-  
+
   let markup = `
         <h4>${msg.user}</h4>
         <p>${msg.message}</p>
@@ -91,9 +87,9 @@ function appendMessage(msg, type) {
     `;
   mainDiv.innerHTML = markup;
   messageArea.appendChild(mainDiv);
- // Generate a random dark color
- const randomColor = darkColors[Math.floor(Math.random() * darkColors.length)];
- userElement.style.color = 'randomColor';
+  // Generate a random dark color
+  const randomColor = darkColors[Math.floor(Math.random() * darkColors.length)];
+  userElement.style.color = "randomColor";
 }
 
 document.addEventListener("click", (event) => {
@@ -131,8 +127,6 @@ document.addEventListener("click", (event) => {
     }
   }
 });
-
-// ... Rest of your client.js code ...
 
 // Add this code to receive and handle message deletion
 socket.on("messageDeleted", (deletedMessageId) => {
@@ -216,6 +210,6 @@ themeToggle.addEventListener("click", (e) => {
   } else {
     btn.style.color = "black";
     themeToggle.style.backgroundColor = "#99e9f2";
-    // console.log(toggleTheme);
+
   }
 });
