@@ -64,7 +64,6 @@ function appendMessage(msg, type) {
   mainDiv.dataset.messageId = msg.id; // Add the message id as a dataset attribute
   mainDiv.dataset.messageUser = msg.user; // Add the message user as a dataset attribute
 
-  const randomColo = getRandomDarkColor();
   let userElement = document.createElement("h4");
   const myName = document.querySelector(`[data-message-user="${name}"]`);
 
