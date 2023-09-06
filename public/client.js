@@ -86,9 +86,7 @@ function appendMessage(msg, type) {
     `;
   mainDiv.innerHTML = markup;
   messageArea.appendChild(mainDiv);
-  // Generate a random dark color
-  const randomColor = darkColors[Math.floor(Math.random() * darkColors.length)];
-  userElement.style.color = "randomColor";
+  
 }
 
 document.addEventListener("click", (event) => {
